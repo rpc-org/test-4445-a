@@ -7,11 +7,15 @@
 # 1. Patch branch name is 'master'
 # 2. There was an updates in github actions in target branch (restriction by github)
 #####################################################################################
+name: Automatic Rebase
 on:
   issue_comment:
     types: [created, edited]
 
-name: Automatic Rebase
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   debug:
     runs-on: ubuntu-latest
