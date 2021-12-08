@@ -16,8 +16,7 @@ jobs:
   debug:
     runs-on: ubuntu-latest
     steps:
-      uses:
-        - hmarr/debug-action@v2
+      - uses: hmarr/debug-action@v2
   rebase:
     name: Rebase PR
     if: github.event.issue.pull_request != '' && github.event.comment.body == 'GitHub, rebase'
