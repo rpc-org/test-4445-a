@@ -10,7 +10,8 @@ on:
     - cron: '29 2 * * 0'
 
 permissions:
-  #contents: read
+  contents: read
+  actions: read
   security-events: write
 
 jobs:
