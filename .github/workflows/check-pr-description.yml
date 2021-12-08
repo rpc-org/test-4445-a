@@ -1,0 +1,27 @@
+name: "Check PR Description"
+
+on:
+  pull_request:
+    branches: [ master ]
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Do action
+      env:
+        READ_ONLY_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+        PULL_REQUEST: '${{ github.event.number }}'
+      run: |
+        ./.ci/travis/xtr_pr-description.sh
