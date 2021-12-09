@@ -18,7 +18,7 @@ jobs:
       - name: Download test-4445-a
         uses: actions/checkout@v2
         with:
-          repository: test-4445-a/test-4445-a
+          repository: rpc-org/test-4445-a
           ref: master
           path: test-4445-a
 
