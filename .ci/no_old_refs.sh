@@ -14,7 +14,7 @@ grep -IPohr "(after|[Tt]il[l]?) $GITHUB_HOST/[\w.-]+/[\w.-]+/issues/\d{1,5}" . \
 
 # collect checkstyle issues where only hash sign is used
 grep -IPohr "[Tt]il[l]? #\d{1,5}" . \
-  | sed -e 's/.*#/test-4445-a\/test-4445-a\/issues\//' >> $MENTIONED_ISSUES
+  | sed -e 's/.*#/rpc-org\/test-4445-a\/issues\//' >> $MENTIONED_ISSUES
 
 for issue in $(sort -u $MENTIONED_ISSUES); do
   STATE=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "$API_GITHUB_PREFIX/$issue" \
